@@ -5,23 +5,23 @@ const features = [
   {
     icon: Target,
     title: "Tailored Strategy",
-    description: "Strategy, automation, and tool recommendations. We guide like consultants, not just build."
+    description: "We guide and refine like consultants, not just build."
   },
   {
     icon: Eye,
     title: "Transparent Process",
-    description: "Know every step and cost upfront. No hidden fees, no surprises."
+    description: "Know every step and cost upfront."
   },
   {
     icon: TrendingUp,
     title: "High ROI",
-    description: "Save cost on engineers and consultants while accelerating execution."
+    description: "We compare tools and recommend the most cost-effective, optimal solution."
   }
 ];
 
 export const FeaturesSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-secondary/20">
+    <section className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -39,7 +39,7 @@ export const FeaturesSection = () => {
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="p-8 text-center hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:scale-[1.02] bg-gradient-to-br from-card to-card/50 border-primary/10"
+              className="p-8 text-center hover:shadow-card transition-all duration-300 bg-gradient-card border-primary/20 hover:border-primary/40"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
                 <feature.icon className="h-8 w-8 text-primary" />

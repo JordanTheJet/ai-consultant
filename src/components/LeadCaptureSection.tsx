@@ -38,7 +38,7 @@ export const LeadCaptureSection = () => {
   };
 
   return (
-    <section id="lead-capture" className="py-24 bg-gradient-to-br from-primary/5 to-accent/5">
+    <section id="lead-capture" className="py-24 bg-gradient-to-b from-secondary/20 to-background">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -53,7 +53,7 @@ export const LeadCaptureSection = () => {
 
         {/* Lead Capture Form */}
         <div className="max-w-2xl mx-auto">
-          <Card className="p-8 md:p-12 bg-gradient-to-br from-card to-background border-primary/20 shadow-[var(--shadow-elegant)]">
+          <Card className="p-8 md:p-12 bg-gradient-card border-primary/20 shadow-card">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Business Name */}
               <div>
@@ -108,7 +108,7 @@ export const LeadCaptureSection = () => {
               <Button
                 type="submit"
                 size="lg"
-                variant="cta"
+                variant="glow"
                 className="w-full h-14 text-lg"
                 disabled={isSubmitting}
               >
