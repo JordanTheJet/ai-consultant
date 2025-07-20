@@ -1,42 +1,10 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
 
 export const LeadCaptureSection = () => {
-  const [formData, setFormData] = useState({
-    businessName: "",
-    problemDescription: "",
-    email: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Thank you for your interest!",
-        description: "We'll be in touch within 24 hours to discuss your automation needs.",
-      });
-      setFormData({ businessName: "", problemDescription: "", email: "" });
-    }, 1000);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-
   return (
     <section id="lead-capture" className="py-24 bg-gradient-to-b from-secondary/20 to-background">
       <div className="container mx-auto px-6">
@@ -54,7 +22,11 @@ export const LeadCaptureSection = () => {
         {/* Lead Capture Form */}
         <div className="max-w-2xl mx-auto">
           <Card className="p-8 md:p-12 bg-gradient-card border-primary/20 shadow-card">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              action="https://formspree.io/f/xeozerwz" 
+              method="POST"
+              className="space-y-6"
+            >
               {/* Business Name */}
               <div>
                 <label htmlFor="businessName" className="block text-sm font-medium mb-2">
@@ -62,9 +34,7 @@ export const LeadCaptureSection = () => {
                 </label>
                 <Input
                   id="businessName"
-                  name="businessName"
-                  value={formData.businessName}
-                  onChange={handleChange}
+                  name="Business Name"
                   placeholder="Your company name"
                   required
                   className="h-12"
@@ -78,9 +48,7 @@ export const LeadCaptureSection = () => {
                 </label>
                 <Textarea
                   id="problemDescription"
-                  name="problemDescription"
-                  value={formData.problemDescription}
-                  onChange={handleChange}
+                  name="Use Case"
                   placeholder="Tell us about the workflow you want to automate, the challenges you're facing, or the business process that needs optimization..."
                   required
                   className="min-h-32 resize-none"
@@ -94,10 +62,8 @@ export const LeadCaptureSection = () => {
                 </label>
                 <Input
                   id="email"
-                  name="email"
+                  name="Email"
                   type="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   placeholder="your@email.com"
                   required
                   className="h-12"
@@ -110,16 +76,9 @@ export const LeadCaptureSection = () => {
                 size="lg"
                 variant="glow"
                 className="w-full h-14 text-lg"
-                disabled={isSubmitting}
               >
-                {isSubmitting ? (
-                  "Submitting..."
-                ) : (
-                  <>
-                    Describe Your Use Case
-                    <Send className="ml-2 h-5 w-5" />
-                  </>
-                )}
+                Describe Your Use Case
+                <Send className="ml-2 h-5 w-5" />
               </Button>
 
               {/* Privacy Note */}
