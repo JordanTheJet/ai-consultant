@@ -18,9 +18,11 @@ export const FounderSection = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* Elaine Zhang */}
             <Card className="p-6 text-center bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-primary-foreground">EZ</span>
-              </div>
+              <img
+                src="/elaine.png"
+                alt="Elaine Zhang"
+                className="w-20 h-20 rounded-full object-cover mx-auto mb-4"
+              />
               <h3 className="text-lg font-semibold mb-2">Elaine Zhang</h3>
               <p className="text-sm text-primary font-medium">
                 MIT Sloan MBA, Business Consultant, Founder
@@ -29,9 +31,11 @@ export const FounderSection = () => {
 
             {/* Yan Si */}
             <Card className="p-6 text-center bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-primary-foreground">YS</span>
-              </div>
+              <img
+                src="/yan.png"
+                alt="Yan Si"
+                className="w-20 h-20 rounded-full object-cover mx-auto mb-4"
+              />
               <h3 className="text-lg font-semibold mb-2">Yan Si</h3>
               <p className="text-sm text-primary font-medium">
                 BU PhD, AI Expert, Founder
@@ -40,9 +44,11 @@ export const FounderSection = () => {
 
             {/* Jordan Tian */}
             <Card className="p-6 text-center bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-primary-foreground">JT</span>
-              </div>
+              <img
+                src="/jordan.png"
+                alt="Jordan Tian"
+                className="w-20 h-20 rounded-full object-cover mx-auto mb-4"
+              />
               <h3 className="text-lg font-semibold mb-2">Jordan Tian</h3>
               <p className="text-sm text-primary font-medium">
                 Harvard MS, AI Expert, Founder
